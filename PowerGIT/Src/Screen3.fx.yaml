@@ -1,2 +1,8 @@
 Screen3 As screen:
 
+    Button4 As button:
+        Text: ="Good work"
+        X: =40
+        Y: =40
+        ZIndex: =1
+
