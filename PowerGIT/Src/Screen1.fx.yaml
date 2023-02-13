@@ -1,0 +1,319 @@
+Screen1 As screen:
+
+    TextInput1 As text:
+        Default: =""
+        FontWeight: =FontWeight.Semibold
+        X: =225
+        Y: =69
+        ZIndex: =1
+
+    Button1 As button:
+        OnSelect: |
+            =Patch('Innovation Apps',Defaults('Innovation Apps'),
+            
+            {
+                Title: TextInput2.Text,
+                Industry:TextInput2_1.Text
+            }
+            
+            );
+            UpdateList.Run(2,"DigiCampus")
+        Text: ="Save"
+        X: =952
+        Y: =384
+        ZIndex: =2
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =94
+        Items: =Accounts
+        Width: =1142
+        X: =40
+        Y: =40
+        ZIndex: =3
+
+        "'Account Name_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Account Name"
+            FieldName: ="name"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.'Account Name'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'Primary Contact_Column1' As dataTableColumn.complexTypeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Primary Contact"
+            FieldName: ="primarycontactid"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.'Primary Contact'.contactid
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+    Form2 As form:
+        DataSource: ='Innovation Apps'
+        DefaultMode: =FormMode.View
+        Height: =148
+        Item: =varApp
+        OnSuccess: =Notify("Successfully submitted",NotificationType.Success,2000)
+        Width: =666
+        X: =60
+        Y: =226
+        ZIndex: =4
+
+        Title_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Innovation Apps'],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'Innovation Apps'], DataSourceInfo.MaxLength, "Title")
+            Required: =true
+            Update: =DataCardValue1.Text
+            Width: =222
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        Industry_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Industry"
+            Default: =ThisItem.Industry
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Innovation Apps'],DataSourceInfo.DisplayName,"Industry")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'Innovation Apps'], DataSourceInfo.MaxLength, "Industry")
+            Required: =false
+            Update: =DataCardValue2.Text
+            Width: =222
+            X: =1
+            Y: =0
+            ZIndex: =5
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2.Y + DataCardValue2.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
+
+        Owner_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Owner"
+            Default: =ThisItem.Owner
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Innovation Apps'],DataSourceInfo.DisplayName,"Owner")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue3.Selected
+            Width: =222
+            X: =2
+            Y: =0
+            ZIndex: =5
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Innovation Apps'].Owner)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Innovation Apps'.Owner,DataCardValue3.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+    Button1_1 As button:
+        OnSelect: |-
+            =Navigate(Screen2);
+            Set(Message, "Welcome to Power Apps");
+        Text: ="Nav"
+        X: =609
+        Y: =411
+        ZIndex: =5
+
+    TextInput2 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(74, 20, 41, 1)
+        Default: =""
+        HintText: ="App Title"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        X: =792
+        Y: =226
+        ZIndex: =6
+
+    TextInput2_1 As text:
+        Align: =Align.Center
+        Default: =""
+        HintText: ="Industry"
+        X: =792
+        Y: =294
+        ZIndex: =7
+
+    Button3 As button:
+        Height: =34
+        OnSelect: |-
+            =Set(varApp,LookUp('Innovation Apps',ID=1));
+            If(IsEmpty(varApp),ahsdg,gsahg,asa,sda)
+        Text: ="Search"
+        Width: =334
+        X: =65
+        Y: =500
+        ZIndex: =8
+

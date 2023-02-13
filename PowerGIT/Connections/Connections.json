@@ -1,0 +1,73 @@
+{
+  "2d6f8d52-baed-4a17-be1d-2c583f68e100": {
+    "connectionParameters": {
+      "workFlowCallbackUri": "https://prod-99.westeurope.logic.azure.com:443/workflows/a053c9afce224b57b52c1808626af9ee/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VpQaOqu4xnNv00Cd1o210SHbbPGgJbeOdlaF06MfCds",
+      "workflowEndpoint": "/subscriptions/775928be-834e-40da-bde6-b48f96905a08/resourceGroups/52f7a0a7dc834bef9d050a6ef1c599c9-3e7394c2c41b4396bae9f22827553319/providers/Microsoft.Logic/workflows/cfd9b2f2-1486-4a0a-9ddd-88b89bb9fc6c",
+      "workflowName": "cfd9b2f2-1486-4a0a-9ddd-88b89bb9fc6c",
+      "workflowPath": "/subscriptions/775928be-834e-40da-bde6-b48f96905a08/resourceGroups/52f7a0a7dc834bef9d050a6ef1c599c9-3e7394c2c41b4396bae9f22827553319/providers/Microsoft.Logic/workflows/cfd9b2f2-1486-4a0a-9ddd-88b89bb9fc6c"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "73c0d424-8497-4df8-8ba2-d9c43a03ce48": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "cfd9b2f2-1486-4a0a-9ddd-88b89bb9fc6c"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "73c0d424-8497-4df8-8ba2-d9c43a03ce48"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "cfd9b2f2-1486-4a0a-9ddd-88b89bb9fc6c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "UpdateList"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "73c0d424-8497-4df8-8ba2-d9c43a03ce48"
+    },
+    "dependents": [],
+    "id": "2d6f8d52-baed-4a17-be1d-2c583f68e100"
+  },
+  "73c0d424-8497-4df8-8ba2-d9c43a03ce48": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/juanq/gateway/greyhound/3000.150.11/1.0.1613.3116/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://codeafrika.sharepoint.com/sites/Innovation": {
+        "dataSources": {
+          "Innovation Apps": {
+            "tableName": "ab882cc1-7133-4682-bfae-d248d90a546a"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Innovation Apps"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "2d6f8d52-baed-4a17-be1d-2c583f68e100"
+    ],
+    "id": "73c0d424-8497-4df8-8ba2-d9c43a03ce48"
+  }
+}

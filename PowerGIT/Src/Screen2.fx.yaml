@@ -1,0 +1,45 @@
+Screen2 As screen:
+
+    Approver As groupContainer.manualLayoutContainer:
+        Height: =464
+        Width: =626
+        X: =735
+        Y: =300
+        ZIndex: =1
+
+        Label1 As label:
+            Text: =Message
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        Form1 As form:
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =436
+            Width: =626
+            Y: =326
+            ZIndex: =2
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(0, 13, 75, 1)
+        Height: =68
+        Width: =1363
+        X: =3
+        ZIndex: =2
+
+    Button2 As button:
+        OnSelect: |-
+            =UpdateContext({
+                Hello:"Welcome Helu"
+            })
+        Text: ="Button"
+        X: =33
+        Y: =282
+        ZIndex: =3
+
+    Label2 As label:
+        Text: =Hello
+        X: =56
+        Y: =164
+        ZIndex: =4
+
