@@ -97,11 +97,11 @@
     "FileID": "e69a30cc-6329-4a02-b5c8-64a002f152cd",
     "Id": "e69a30cc-6329-4a02-b5c8-64a002f152cd",
     "InstrumentationKey": "",
-    "Name": "TestGitApp ",
+    "Name": "TestGitApp",
     "OriginatingVersion": "1.326"
   },
   "PublishInfo": {
-    "AppName": "TestGitApp ",
+    "AppName": "TestGitApp",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
@@ -113,6 +113,7 @@
   },
   "ScreenOrder": [
     "Screen1",
-    "Screen2"
+    "Screen2",
+    "Screen3"
   ]
 }
